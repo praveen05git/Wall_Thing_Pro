@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/weekly"
+        android:icon="@drawable/ic_filter_7_black_24dp"
+        android:title="Weekly 7" />
+
+    <item
+        android:id="@+id/unlocked"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Casual" />
+
+    <item
+        android:id="@+id/locked"
+        android:icon="@drawable/ic_local_offer_black_24dp"
+        android:title="Exclusive" />
+
+
+</menu>
