@@ -52,27 +52,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
              @Override
              public void onClick(View view) {
 
-                 androidx.appcompat.app.AlertDialog alert_dia1=new androidx.appcompat.app.AlertDialog.Builder(mcontext).create();
-                 alert_dia1.setTitle("Remove Ads!");
-                 alert_dia1.setMessage("Download the Jotter Lite Pro to enjoy Ad-free service!! Download Now?");
-
-                 alert_dia1.setButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() {
-                     @Override
-                     public void onClick(DialogInterface dialog, int which) {
-
-                         String img= mdata.get(position).getUrl();
-                         Intent PhotoIntent = new Intent(mcontext, photo_view.class);
-                         PhotoIntent.putExtra("img_url", img);
-                         mcontext.startActivity(PhotoIntent);
-                     }
-                 });
-                 alert_dia1.setButton(AlertDialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() {
-                     @Override
-                     public void onClick(DialogInterface dialog, int which) {
-                         dialog.cancel();
-                     }
-                 });
-                 alert_dia1.show();
+                 String img= mdata.get(position).getUrl();
+                 Intent PhotoIntent = new Intent(mcontext, photo_view.class);
+                 PhotoIntent.putExtra("img_url", img);
+                 mcontext.startActivity(PhotoIntent);
 
              }
          });
