@@ -51,7 +51,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
          holder.cardView.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-
                  String img= mdata.get(position).getUrl();
                  Intent PhotoIntent = new Intent(mcontext, photo_view.class);
                  PhotoIntent.putExtra("img_url", img);

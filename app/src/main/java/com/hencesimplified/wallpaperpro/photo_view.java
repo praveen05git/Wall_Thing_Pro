@@ -191,4 +191,10 @@ public class photo_view extends AppCompatActivity {
         return (check== PackageManager.PERMISSION_GRANTED);
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+    }
+
 }

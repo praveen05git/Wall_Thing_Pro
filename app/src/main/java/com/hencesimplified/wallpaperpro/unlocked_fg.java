@@ -1,6 +1,7 @@
 package com.hencesimplified.wallpaperpro;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -52,6 +53,11 @@ public class unlocked_fg extends Fragment {
         myrv.setHasFixedSize(true);
         myrv.setLayoutManager(new GridLayoutManager(getContext(),3));
         myAdap = new RecyclerViewAdapter(getContext(),listPhotos);
+
+        SharedPreferences pref = getContext().getSharedPreferences("WallProPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("Page",2);
+        editor.apply();
 
         databaseReference = firebaseDatabase.getReference("unlocked");
 
