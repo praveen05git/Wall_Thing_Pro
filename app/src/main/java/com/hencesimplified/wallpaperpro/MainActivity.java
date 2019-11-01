@@ -5,14 +5,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -132,6 +137,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         alertDialog.show();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.opt_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int opt_id=item.getItemId();
+
+        switch (opt_id)
+        {
+
+            case R.id.opt_rate:
+                Intent playStore = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.jotter.notes"));
+                startActivity(playStore);
+                return true;
+
+            case R.id.opt_more:
+                try {
+                    //replace &quot;Unified+Apps&quot; with your developer name https://play.google.com/store/apps/developer?id=Hence+Simplified&hl=en
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:Hence Simplified")));
+                }
+                catch (android.content.ActivityNotFoundException e) {
+                    //replace &quot;Unified+Apps&quot; with your developer name
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/search?q=pub:Hence Simplified")));
+                }
+                return true;
+
+            case R.id.opt_about:
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
