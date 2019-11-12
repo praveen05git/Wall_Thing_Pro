@@ -121,7 +121,7 @@ public class photo_view extends AppCompatActivity {
                                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, ostream);
                                 ostream.flush();
                                 ostream.close();
-                                Toast.makeText(getApplicationContext(),"Downloaded",Toast.LENGTH_SHORT).show();
+
 
                             } catch (IOException e) {
                                 Log.e("IO", e.getLocalizedMessage());
@@ -132,6 +132,8 @@ public class photo_view extends AppCompatActivity {
 
                     }
                 }).start();
+
+                Toast.makeText(getApplicationContext(),"Downloaded",Toast.LENGTH_SHORT).show();
 
             }
 

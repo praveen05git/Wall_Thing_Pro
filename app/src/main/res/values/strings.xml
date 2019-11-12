@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Wall Thing Pro</string>
+    <string name="title_activity_about">about</string>
 </resources>

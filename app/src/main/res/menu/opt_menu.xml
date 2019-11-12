@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/opt_rate"
-        android:title="Rate us" />
+        android:title="Rate Wall Thing Pro!" />
     <item
         android:id="@+id/opt_more"
         android:title="More Apps" />

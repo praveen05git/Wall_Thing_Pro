@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -29,6 +31,7 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navView;
+    FloatingActionButton info;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             =  new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navView = findViewById(R.id.nav_view);
+        info=findViewById(R.id.floatingActionButton);
 
         SharedPreferences preferences=getApplicationContext().getSharedPreferences("WallProPref",0);
         int page=preferences.getInt("Page",-1);
@@ -84,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent page_intent=new Intent(MainActivity.this,information.class);
+                startActivity(page_intent);
+            }
+        });
     }
 
     public boolean checkPermission(String permission)
@@ -157,23 +169,24 @@ public class MainActivity extends AppCompatActivity {
         {
 
             case R.id.opt_rate:
-                Intent playStore = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.jotter.notes"));
+                Intent playStore = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hencesimplified.wallpaperpro"));
                 startActivity(playStore);
                 return true;
 
             case R.id.opt_more:
                 try {
-                    //replace &quot;Unified+Apps&quot; with your developer name https://play.google.com/store/apps/developer?id=Hence+Simplified&hl=en
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:Hence Simplified")));
+
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/dev?id=7031227816779180923")));
                 }
                 catch (android.content.ActivityNotFoundException e) {
-                    //replace &quot;Unified+Apps&quot; with your developer name
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/search?q=pub:Hence Simplified")));
                 }
                 return true;
 
             case R.id.opt_about:
-
+                finish();
+                Intent page_intent=new Intent(this,about.class);
+                startActivity(page_intent);
                 return true;
 
             default:
