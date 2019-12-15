@@ -11,10 +11,21 @@
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Casual" />
 
+
+    <item
+        android:id="@+id/wildlife"
+        android:icon="@drawable/ic_pets_black_24dp"
+        android:title="WildlIfe" />
+
+    <item
+        android:id="@+id/scenes"
+        android:icon="@drawable/ic_ac_unit_black_24dp"
+        android:title="Scenic" />
+
+
     <item
         android:id="@+id/locked"
         android:icon="@drawable/ic_local_offer_black_24dp"
         android:title="Exclusive" />
-
 
 </menu>

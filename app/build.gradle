@@ -8,8 +8,8 @@ android {
         applicationId "com.hencesimplified.wallpaperpro"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 3
-        versionName '1..2.3'
+        versionCode 8
+        versionName '1.4.6'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,7 +31,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

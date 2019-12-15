@@ -55,9 +55,9 @@ public class locked_fg extends Fragment {
         myrv.setLayoutManager(new GridLayoutManager(getContext(),3));
         myAdap = new RecyclerViewAdapter(getContext(),listPhotos);
 
-        SharedPreferences pref = getContext().getSharedPreferences("WallProPref", 0); // 0 - for private mode
+        SharedPreferences pref = getContext().getSharedPreferences("ProPref", 0); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt("Page",3);
+        editor.putInt("ProPage",5);
         editor.apply();
 
         databaseReference = firebaseDatabase.getReference("locked");

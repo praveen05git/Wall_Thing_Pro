@@ -54,9 +54,9 @@ public class unlocked_fg extends Fragment {
         myrv.setLayoutManager(new GridLayoutManager(getContext(),3));
         myAdap = new RecyclerViewAdapter(getContext(),listPhotos);
 
-        SharedPreferences pref = getContext().getSharedPreferences("WallProPref", 0); // 0 - for private mode
+        SharedPreferences pref = getContext().getSharedPreferences("ProPref", 0); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt("Page",2);
+        editor.putInt("ProPage",2);
         editor.apply();
 
         databaseReference = firebaseDatabase.getReference("unlocked");

@@ -133,7 +133,7 @@ public class photo_view extends AppCompatActivity {
                     }
                 }).start();
 
-                Toast.makeText(getApplicationContext(),"Downloaded",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Downloaded and saved in Internal Storage->Wall Thing",Toast.LENGTH_SHORT).show();
 
             }
 

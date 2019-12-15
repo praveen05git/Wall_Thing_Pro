@@ -51,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.locked:
                     fragment=new locked_fg();
                     break;
+                case R.id.wildlife:
+                    fragment=new photographer1_fg();
+                    break;
+                case R.id.scenes:
+                    fragment=new Photographer2_fg();
+                    break;
             }
             return loadFragment(fragment);
         }
@@ -64,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         navView = findViewById(R.id.nav_view);
         info=findViewById(R.id.floatingActionButton);
 
-        SharedPreferences preferences=getApplicationContext().getSharedPreferences("WallProPref",0);
-        int page=preferences.getInt("Page",-1);
+        SharedPreferences preferences=getApplicationContext().getSharedPreferences("ProPref",0);
+        int page=preferences.getInt("ProPage",-1);
 
         if(page==1) {
             loadFragment(new weekly_fg());
@@ -77,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
             navView.setSelectedItemId(R.id.unlocked);
         }
         else if(page==3)
+        {
+            loadFragment(new photographer1_fg());
+            navView.setSelectedItemId(R.id.wildlife);
+        }
+        else if(page==4)
+        {
+            loadFragment(new Photographer2_fg());
+            navView.setSelectedItemId(R.id.scenes);
+        }
+        else if(page==5)
         {
             loadFragment(new locked_fg());
             navView.setSelectedItemId(R.id.locked);

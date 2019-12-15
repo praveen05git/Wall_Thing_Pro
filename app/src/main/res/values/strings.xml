@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Wall Thing Pro</string>
-    <string name="title_activity_about">about</string>
+    <string name="photographer1name"><u>@rennies_photography</u></string>
+    <string name="photographer2name"><u>@cute_p_i_k_a_c_h_u</u></string>
 </resources>
