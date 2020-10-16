@@ -14,5 +14,5 @@
   * Access Exclusive wallpapers for free!
   * Exclusive wallpapers are updated during special occasions or trends
 
-For free wallpaper app try using Wall Thing Pro:
+Download Wall Thing Pro:
 https://play.google.com/store/apps/details?id=com.hencesimplified.wallapaper
