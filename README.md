@@ -1,5 +1,7 @@
 # Wall_Thing_Pro
 
+Follow https://github.com/praveen05git/WallThingPro for updated project
+
 * Featured:
   * Wildlife: Enjoy fresh clicks from our wildlife photographer
   * Scenic: Set the gorgeous looking sceneries from our photographer
